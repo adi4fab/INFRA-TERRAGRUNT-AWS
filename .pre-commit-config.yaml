@@ -1,3 +1,14 @@
+repos:
+- repo: local
+  hooks:
+  - id: ticket-des
+    name: check for ticket ID in commit message
+    language: pygrep
+    entry: '\A(?!\[(prod)\](.+))'
+    args: [--multiline]
+    stages: [commit-msg]
+
+
 - repo: https://github.com/gruntwork-io/pre-commit
   rev: v0.1.17
   hooks:
