@@ -1,10 +1,10 @@
 repos:
 - repo: local
   hooks:
-  - id: ticket-des
-    name: check for ticket ID in commit message
+  - id: prod-check
+    name: Check for [PROD] in commit message
     language: pygrep
-    entry: '\A(\[(prod)\].+)'
+    entry: '\A(\[PROD\].+)'
     args: [--multiline]
     stages: [commit-msg]
 

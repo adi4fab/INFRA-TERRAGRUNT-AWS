@@ -47,7 +47,7 @@ inputs = {
       cidr_blocks = "0.0.0.0/0"
     },
 
- 
+
   ]
 
   tags = local.common_vars.common_tags
