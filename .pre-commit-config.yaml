@@ -3,6 +3,6 @@ repos:
   rev: v0.1.17
   hooks:
   - id: terragrunt-hclfmt
-    name: Run terragrunt hclfmt during git commit
+    name:  terragrunt hclfmt during git commit
     entry: terragrunt hclfmt
     stages: [commit]
