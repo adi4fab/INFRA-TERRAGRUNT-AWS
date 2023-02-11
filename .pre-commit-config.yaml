@@ -1,0 +1,17 @@
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.17
+  hooks:
+    - id: terragrunt-hclfmt
+
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.72.1
+  hooks:
+  - id: terraform_fmt
+  
+  - id: terraform_tflint
+    args:
+      - '--args=--only=terraform_deprecated_index'
+      - '--args=--only=terraform_deprecated_interpolation'
+      - '--args=--only=terraform_empty_list_equality'
+      - '--args=--only=terraform_module_version'
+      - '--args=--only=terraform_typed_variables'
