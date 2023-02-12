@@ -19,9 +19,13 @@ inputs = {
   description = "Production SG"
   vpc_id      = dependency.vpc.outputs.vpc_id
 
-  ingress_with_self = [
+  ingress_with_cidr_blocks = [
     {
-      rule = "all-all"
+      from_port   = 22
+      to_port     = 22
+      protocol    = "tcp"
+      description = "access to me"
+      cidr_blocks = "0.0.0.0/0"
     },
   ]
 
@@ -35,19 +39,6 @@ inputs = {
     "http-80-tcp",
     "https-443-tcp",
     "ssh-tcp"
-  ]
-
-  egress_with_cidr_blocks = [
-
-    {
-      from_port   = -1
-      to_port     = -1
-      protocol    = "icmp"
-      description = "icmp legacy traffic port"
-      cidr_blocks = "0.0.0.0/0"
-    },
-
-
   ]
 
   tags = local.common_vars.common_tags

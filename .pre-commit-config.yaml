@@ -4,5 +4,7 @@ repos:
   hooks:
   - id: terragrunt-hclfmt
     name:  terragrunt hclfmt during git commit
-    entry: terragrunt hclfmt
+    entry: /opt/homebrew/bin/terragrunt
     stages: [commit]
+    args: [hclfmt]
+

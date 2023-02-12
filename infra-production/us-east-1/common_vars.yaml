@@ -1,3 +1,7 @@
 common_tags:
   Environment: "production"
   Terraform: "true"
+
+
+amazon_linux_image_name: amzn2-ami-kernel-5.10-hvm-2.0.*-x86_64-gp2
+ubuntu_linux_image_name: ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20220706
